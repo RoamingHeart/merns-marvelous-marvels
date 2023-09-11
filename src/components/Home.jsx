@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <Container>
       <div className="title">
-        <h1>Use the Marvel API</h1>
+        <h1>Discover Heroes!</h1>
       </div>
       <SearchBar
         handleClick={handleClick}

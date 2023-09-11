@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <Navbar logo={<Logo text={"Marbabel"} />}>
+      <Navbar logo={<Logo text={"Marvelous Heroes"} />}>
         <NavItem to={"/"} text={"Home"} />
       </Navbar>
       <Routes>
