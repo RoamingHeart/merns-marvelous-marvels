@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { fetchHero } from "../utils";
+import { fetchHero } from "../libs/utils";
 
 export default function HeroDetails() {
   let { id } = useParams();
@@ -19,7 +19,7 @@ export default function HeroDetails() {
     fetchHero(id)
       .then((data) => setHero(data))
       .catch((err) => console.error(err));
-  }, [id]);
+  }, []);
 
   if (hero) {
     name = hero.data.results[0].name;
@@ -35,7 +35,7 @@ export default function HeroDetails() {
   return (
     <div className="container large">
       <div className="hero__details-container">
-        <img src={thumbnailUrl} alt="hero full size" />
+        <img src={thumbnailUrl} alt="hero image full size" />
         <div className="hero__details">
           <h4>Name</h4>
           <p>{name}</p>
@@ -48,9 +48,11 @@ export default function HeroDetails() {
           <div className="hero__series">
             <h4>Series</h4>
             <ul>
-              {series ? series.map((title) => (
+              {series
+                ? series.map((title) => (
                     <li key={Math.random() * 1000}>{title.name}</li>
-                  )) : null}
+                  ))
+                : null}
             </ul>
           </div>
         </div>
