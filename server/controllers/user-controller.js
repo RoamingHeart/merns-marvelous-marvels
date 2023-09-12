@@ -59,7 +59,7 @@ module.exports = {
     }
   },
   // remove a hero from `savedHeroes`
-  async deleteHeroes({ user, params }, res) {
+  async deleteHero({ user, params }, res) {
     const updatedUser = await User.findOneAndUpdate(
       { _id: user._id },
       { $pull: { savedHeroes: { heroId: params.heroId } } },

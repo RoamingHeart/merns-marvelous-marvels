@@ -2,82 +2,82 @@ const { Schema } = require('mongoose');
 
 // This is a subdocument schema, it won't become its own model but we'll use it as the schema for the User's `savedHeroes` array in User.js
 const heroSchema = new Schema({
-  code: int,
-  status: string,
-  copyright: string,
-  attributionText: string,
-  attributionHTML: string,
+  code: Number,
+  status: String,
+  copyright: String,
+  attributionText: String,
+  attributionHTML: String,
   data: {
-    offset: int,
-    limit: int,
-    total: int,
-    count: int,
+    offset: Number,
+    limit: Number,
+    total: Number,
+    count: Number,
     results: [
       {
-        id: int,
-        name: string,
-        description: string,
+        id: Number,
+        name: String,
+        description: String,
         modified: Date,
-        resourceURI: string,
+        resourceURI: String,
         urls: [
           {
-            type: string,
-            url: string
+            type: String,
+            url: String
           }
         ],
         thumbnail: {
-          path: string,
-          extension: string
+          path: String,
+          extension: String
         },
         comics: {
-          available: int,
-          returned: int,
-          collectionURI: string,
+          available: Number,
+          returned: Number,
+          collectionURI: String,
           items: [
             {
-              resourceURI: string,
-              name: string
+              resourceURI: String,
+              name: String
             }
           ]
         },
         stories: {
-          available: int,
-          returned: int,
-          collectionURI: string,
+          available: Number,
+          returned: Number,
+          collectionURI: String,
           items: [
             {
-              resourceURI: string,
-              name: string,
-              type: string
+              resourceURI: String,
+              name: String,
+              type: String
             }
           ]
         },
         events: {
-          available: int,
-          returned: int,
-          collectionURI: string,
+          available: Number,
+          returned: Number,
+          collectionURI: String,
           items: [
             {
-              resourceURI: string,
-              name: string
+              resourceURI: String,
+              name: String
             }
           ]
         },
         series: {
-          available: int,
-          returned: int,
-          collectionURI: string,
+          available: Number,
+          returned: Number,
+          collectionURI: String,
           items: [
             {
-              resourceURI: string,
-              name: string
+              resourceURI: String,
+              name: String
             }
           ]
         }
       }
     ]
   },
-  etag: string
+  etag: String
 });
 
 module.exports = heroSchema;
