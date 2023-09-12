@@ -89,11 +89,10 @@ const SavedHeroes = () => {
             return (
               <Col md="4">
                 <Card key={hero.heroId} border='dark'>
-                  {hero.image ? <Card.Img src={hero.image} alt={`The cover for ${hero.title}`} variant='top' /> : null}
+                  {hero.data.results.thumbnail ? <Card.Img src={hero.data.results.thumbnail} alt={`Image of ${hero.data.results.name}`} variant='top' /> : null}
                   <Card.Body>
-                    <Card.Title>{hero.title}</Card.Title>
-                    <p className='small'>Authors: {hero.authors}</p>
-                    <Card.Text>{hero.description}</Card.Text>
+                    <Card.Title>{hero.data.results.name}</Card.Title>
+                    <Card.Text>{hero.data.results.description}</Card.Text>
                     <Button className='btn-block btn-danger' onClick={() => handleDeleteHero(hero.heroId)}>
                       Banish This Hero to the Shadow Realm!
                     </Button>
