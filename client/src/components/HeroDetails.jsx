@@ -48,11 +48,11 @@ export default function HeroDetails() {
           <div className="hero__series">
             <h4>Series</h4>
             <ul>
-              {series
+              {series.length
                 ? series.map((title) => (
                     <li key={Math.random() * 1000}>{title.name}</li>
                   ))
-                : null}
+                : <li key={Math.random() * 1000}>Not Part of Any Series</li>}
             </ul>
           </div>
         </div>
