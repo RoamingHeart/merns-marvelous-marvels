@@ -35,6 +35,7 @@ export default function Home() {
         key={hero.id}
         id={hero.id}
         thumbnail={`${hero.thumbnail.path}/${IMG_FANTASTIC}.${hero.thumbnail.extension}`}
+        
       />
     ));
   }
