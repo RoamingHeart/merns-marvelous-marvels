@@ -4,7 +4,7 @@
   
   ## Description 
   
-    Merns Marvelous Marvels is your one stop shop for all your marvel character needs, questions and concerns. Here you will have your very own account and be able to find every Marvel character you could ever need with the ability to save your favorites or return to interesting ones later. Finally when your done simply logout and return to your heroes later.
+  Merns Marvelous Marvels is your one stop shop for all your marvel character needs, questions and concerns. Here you will have your very own account and be able to find every Marvel character you could ever need with the ability to save your favorites or return to interesting ones later. Finally when your done simply logout and return to your heroes later.
 
   ## Table of Contents 
 
@@ -26,12 +26,12 @@
    
   ## Contributing
 
-    If any additions/contributions are wanting to be added or made, simply fork the repo and contribute.
-    Contributions/additions to improve are always welcome. Please make sure all credits are properly given to people who have worked prior or currently on the app! 
+  If any additions/contributions are wanting to be added or made, simply fork the repo and contribute.
+  Contributions/additions to improve are always welcome. Please make sure all credits are properly given to people who have worked prior or currently on the app! 
 
-  ## github repo and video link
+  ## Website Link
 
-    https://github.com/RoamingHeart/merns-marvelous-marvels
+  Website: https://ancient-waters-31832-5d5b544cc90f.herokuapp.com/
   
   ## Questions
 
