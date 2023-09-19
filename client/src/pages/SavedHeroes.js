@@ -70,6 +70,7 @@ const SavedHeroes = () => {
   if (!userDataLength) {
     return <h2>LOADING...</h2>;
   }
+  
 
   return (
     <>
