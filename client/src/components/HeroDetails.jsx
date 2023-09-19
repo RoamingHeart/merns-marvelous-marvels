@@ -11,6 +11,8 @@ export default function HeroDetails() {
   let { id } = useParams();
 
   const [hero, setHero] = useState();
+  const [searchedHeroes, setSearchedHeroes] = useState([])
+  const [searchInput, setSearchInput] = useState('');
   const [savedHeroIds, setSavedHeroIds] = useState(getSavedHeroIds())
   
   useEffect(() => {
@@ -28,7 +30,7 @@ export default function HeroDetails() {
     fetchHero(id)
       .then((data) => setHero(data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [id]);
 
   if (hero) {
     name = hero.data.results[0].name;
@@ -41,30 +43,63 @@ export default function HeroDetails() {
 
   if (!hero) return;
 
-  const handleSaveHero = async (heroId) => {
-    // find the book in `searchedBooks` state by the matching id
-    const heroToSave = hero.find((hero) => hero.heroId === heroId);
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
 
-    // get token
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-    if (!token) {
+    if (!hero) {
       return false;
     }
 
     try {
-      const response = await saveHero(heroToSave, token);
+      const response = await fetchHero(searchInput);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
 
-      // if book successfully saves to user's account, save book id to state
-      setSavedHeroIds([...savedHeroIds, heroToSave.heroId]);
+      const { items } = await response.json();
+
+      const heroData = items.map((book) => ({
+        heroId: hero.id,
+      }));
+
+      setSearchedHeroes(heroData);
+      setSearchInput('');
     } catch (err) {
       console.error(err);
     }
   };
+
+  const handleSaveHero = async (heroId) => {
+  // Find the hero with the matching heroId
+  const heroToSave = searchedHeroes.find((hero) => hero.heroId === heroId);
+
+  // Check if a hero with the given heroId was found
+  if (!heroToSave) {
+    console.error(`Hero with heroId ${heroId} not found.`);
+    return;
+  }
+
+  // Get the authentication token
+  const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+  if (!token) {
+    return false;
+  }
+
+  try {
+    const response = await saveHero(heroToSave, token);
+
+    if (!response.ok) {
+      throw new Error('Something went wrong!');
+    }
+
+    // If the hero successfully saves to the user's account, save heroId to state
+    setSavedHeroIds([...savedHeroIds, heroToSave.heroId]);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
   return (
     <div className="container large">
