@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab, Card } from 'react-bootstrap'; // Added Card
+import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
 
@@ -23,6 +24,7 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to='/'>
                 Search For Heroes
               </Nav.Link>
+              {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>
@@ -31,11 +33,7 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Card className="login-signup-card"> {/* Added Card */}
-                  <Card.Body className="login-signup-card-body"> {/* Added Card.Body */}
-                    <Nav.Link onClick={() => setShowModal(true)} className="login-signup-link">Login/Sign Up</Nav.Link>
-                  </Card.Body>
-                </Card>
+                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
