@@ -53,3 +53,6 @@
 [Base Code](https://github.com/BeGeos/marvel-api-search-engine)
 
 
+![Alt text](client/images/marvelous-marvels1.png)
+
+![Alt text](client/images/marvelous-marvels2.png)
