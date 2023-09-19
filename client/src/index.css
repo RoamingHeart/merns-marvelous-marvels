@@ -1,3 +1,4 @@
+/* Reset styles */
 *,
 *::before,
 *::after {
@@ -6,19 +7,22 @@
   box-sizing: border-box;
 }
 
+/* Base styles */
 html {
   font-size: 16px;
   min-height: 100%;
 }
+
 html * {
   font-size: 16px;
   line-height: 1.625;
-  color: "#2020131";
-  font-family: Nunito, sans-serif;
+  color: #202131; /* Corrected color value */
+  font-family: 'Nunito', sans-serif;
 }
 
 body {
   min-height: 100vh;
+  background-color: #f8f8f8; /* Light background color */
 }
 
 h2,
@@ -37,8 +41,9 @@ a:visited {
   color: inherit;
 }
 
+/* Button styles */
 button {
-  background-color: rgb(69, 126, 249);
+  background-color: #f0131e; /* Marvel Red */
   color: white;
   font-size: 1rem;
   font-weight: 700;
@@ -48,6 +53,7 @@ button {
   border: none;
 }
 
+/* Form styles */
 form {
   display: flex;
   flex-direction: column;
@@ -64,29 +70,27 @@ form input {
   border-radius: 0.3rem;
 }
 
-/* Navbar */
+/* Navbar styles */
 .navbar {
-  width: min(90%, 75rem);
-  margin: 0 auto;
-  min-height: 3rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%; /* Full width */
+  background-color: #202131; /* Dark background color */
+  padding: 1rem 0; /* Added padding */
 }
 
 .navbar ul {
   display: flex;
   flex-direction: row;
-  gap: 4rem;
+  gap: 2rem; /* Reduced gap */
+  margin-right: 2rem; /* Added margin */
 }
 
+/* Header styles */
 header {
-  min-width: 100%;
   background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Added shadow */
 }
 
-/* Container */
+/* Container styles */
 .container {
   width: min(90%, 45rem);
   margin: 2rem auto;
@@ -97,18 +101,22 @@ header {
   width: min(90%, 72rem);
 }
 
+/* Grid styles */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted column width */
   grid-auto-rows: auto;
-  gap: 0.3rem;
+  gap: 1rem; /* Reduced gap */
 }
 
+/* Card styles */
 .card {
   border-radius: 0.3rem;
   overflow: hidden;
   animation: fadeIn 0.3s ease-in-out forwards;
   position: relative;
+  background-color: white; /* Added background color */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Added shadow */
 }
 
 .title {
@@ -121,7 +129,7 @@ header {
 
 .card-name {
   opacity: 0;
-  color: white;
+  color: #f0131e; /* Marvel Red */
   position: absolute;
   top: 50%;
   transform: translateY(50%);
@@ -133,38 +141,43 @@ header {
 }
 
 .card:hover {
+  transform: scale(1.02); /* Slight scale-up on hover */
   box-shadow: 0 5px 50px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* Navbar login and signup styles */
+.navbar a.login-signup-link {
+  color: #202131; /* Darker color for the font */
+  font-size: 1.1rem; /* Font size for the links */
+  margin-right: 1rem; /* Add spacing between login and signup */
+  text-decoration: none;
 }
 
-.hero__details-container {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  line-height: 1.6;
+.navbar a.login-signup-link:hover {
+  color: #f0131e; /* Marvel Red on hover */
 }
 
-.hero__details-container img {
-  flex: 1;
-  max-width: 100%;
-  max-height: 36rem;
+/* Added styles for the login/signup card */
+.login-signup-card {
+  background-color: white; /* Background color for the card */
+  border: none; /* Remove border */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Added shadow */
+  font-size: 16px; /* Font size for card */
+  margin-right: 1rem; /* Add margin to separate from other links */
 }
 
-.hero__details {
-  flex: 1;
-  min-width: 35ch;
+.login-signup-card-body {
+  padding: 0.5rem 1rem; /* Adjust padding inside the card */
 }
 
-.hero__details li {
-  list-style: disc;
-  margin-left: 1.5rem;
+/* Adjusted color for the card text */
+.login-signup-card .login-signup-link {
+  color: #202131; /* Darker color for the font */
+  font-size: 1.1rem; /* Font size for the links */
+  text-decoration: none;
+}
+
+.login-signup-card .login-signup-link:hover {
+  color: #f0131e; /* Marvel Red on hover */
 }
