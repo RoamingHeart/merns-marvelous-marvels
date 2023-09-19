@@ -168,3 +168,52 @@ header {
   list-style: disc;
   margin-left: 1.5rem;
 }
+
+/* Centering and Background for Login and Signup Forms */
+.maroonish-bg {
+  background-color: #ffcccc; /* Adjust the color code as needed */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for the Whole Navbar Page */
+.maroonish-bg {
+  background-color: #800000; /* Adjust the color code as needed for maroonish red */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* AppNavbar.css */
+.custom-navbar {
+  background-color: #800000; /* Darker maroon color */
+}
+
+/* LoginForm.css */
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: maroon;
+}
+
+.login-form {
+  background-color: #800000; /* Darker maroon color */
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px; /* Adjust the width as needed */
+  text-align: center;
+  color: white;
+}
+
+.login-form label {
+  color: white;
+}
+
+.login-form button {
+  width: 100%;
+}

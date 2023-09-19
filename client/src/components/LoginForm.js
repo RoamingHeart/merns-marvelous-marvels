@@ -1,4 +1,3 @@
-// see SignupForm.js for comments
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
@@ -47,14 +46,31 @@ const LoginForm = () => {
     });
   };
 
+  const formStyle = {
+    backgroundColor: 'rgb(100, 0, 0)', // 14 shades darker than maroon
+    padding: '20px',
+    borderRadius: '5px',
+    color: 'white',
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#ff9900', // Set a complementary color for the button
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    padding: '10px 20px',
+    cursor: 'pointer',
+    fontSize: '16px',
+  };
+
   return (
-    <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit} style={formStyle}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
         <Form.Group className='mb-3'>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Label htmlFor='email' className="text-white">Email</Form.Label>
           <Form.Control
             type='text'
             placeholder='Your email'
@@ -67,7 +83,7 @@ const LoginForm = () => {
         </Form.Group>
 
         <Form.Group className='mb-3'>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Label htmlFor='password' className="text-white">Password</Form.Label>
           <Form.Control
             type='password'
             placeholder='Your password'
@@ -81,11 +97,13 @@ const LoginForm = () => {
         <Button
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
-          variant='success'>
+          variant='success'
+          className="w-100"
+          style={buttonStyle}>
           Submit
         </Button>
       </Form>
-    </>
+    </div>
   );
 };
 

@@ -49,10 +49,27 @@ const SignupForm = () => {
     });
   };
 
+  const formStyle = {
+    backgroundColor: 'rgb(100, 0, 0)', // 14 shades darker than maroon
+    padding: '20px',
+    borderRadius: '5px',
+    color: 'white',
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#ff9900', // Set a complementary color for the button
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    padding: '10px 20px',
+    cursor: 'pointer',
+    fontSize: '16px',
+  };
+
   return (
     <>
       {/* This is needed for the validation functionality above */}
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit} style={formStyle}>
         {/* show alert if server response is bad */}
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your signup!
@@ -99,7 +116,8 @@ const SignupForm = () => {
         <Button
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
-          variant='success'>
+          variant='success'
+          style={buttonStyle}>
           Submit
         </Button>
       </Form>
@@ -108,3 +126,4 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
+
