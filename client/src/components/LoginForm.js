@@ -46,9 +46,26 @@ const LoginForm = () => {
     });
   };
 
+  const formStyle = {
+    backgroundColor: 'rgb(100, 0, 0)', // 14 shades darker than maroon
+    padding: '20px',
+    borderRadius: '5px',
+    color: 'white',
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#ff9900', // Set a complementary color for the button
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    padding: '10px 20px',
+    cursor: 'pointer',
+    fontSize: '16px',
+  };
+
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit} className="bg-maroon p-4 rounded">
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit} style={formStyle}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
@@ -81,7 +98,8 @@ const LoginForm = () => {
           disabled={!(userFormData.email && userFormData.password)}
           type='submit'
           variant='success'
-          className="w-100">
+          className="w-100"
+          style={buttonStyle}>
           Submit
         </Button>
       </Form>
